@@ -155,6 +155,7 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
+*.meta
 
 # Crashlytics generated file
 
