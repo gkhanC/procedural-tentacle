@@ -3,7 +3,7 @@
 namespace HypeFire.Utilities.CustomStructures
 {
 	[Serializable]
-	public struct MinMaxFloat :IMinMaxValue<float>
+	public class MinMaxFloat :IMinMaxValue<float>
 	{
 		public float min;
 		public float max;
