@@ -16,7 +16,7 @@ namespace ProceduralTentacle.Movement
 
 		private float _calculatedHeight = 0f;
 		public float velocityLerpTime { get; set; }
-		public Vector3 velocity { get; private set; } = Vector3.zero;
+		
 		[field: SerializeField] public float heightFromGround { get; protected set; } = 1f;
 
 		public MovementControllerWithTransform(LayerMask moveAbleLayers, float velocityLerpTime = 5f,

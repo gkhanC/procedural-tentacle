@@ -484,11 +484,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a951dac3916164ba8d8a8f704b34d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <legDistance>k__BackingField:
+    min: 4.5
+    max: 6.6000004
+  <heightFromGround>k__BackingField: 1
+  <newLegCooldown>k__BackingField: 0.25
+  <speed>k__BackingField: 5
+  <deployedLegCount>k__BackingField: 0
+  <minAnchoredParts>k__BackingField: 16384
+  <totalLegCount>k__BackingField: 0
+  <legLocation>k__BackingField: {x: 0.50596726, y: 0, z: 0.3702666}
+  <legPlacementOrigin>k__BackingField: {x: 0, y: 0, z: 0}
   <moveAbleLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 51
-  <speed>k__BackingField: 5
-  <heightFromGround>k__BackingField: 1
 --- !u!65 &1423846798
 BoxCollider:
   m_ObjectHideFlags: 0

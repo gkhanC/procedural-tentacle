@@ -8,24 +8,24 @@ namespace ProceduralTentacle.Creature.Tentacles
 	[RequireComponent(typeof(LineRenderer))]
 	public class TentacleLeg : MonoBehaviour
 	{
-		private LineRenderer _lneRenderer;
-		private CreatureController _creatureController;
-		private TentacleLegData _data;
-
-		private Vector3[] _parts;
-		private Vector3[] _partOffsets;
-		private Vector2 _footOffset;
-
 		private bool _isCanDie = false;
 		private bool _isDied = false;
-
-		private float _legHeight = 0f;
-		private float _rotationSpeed = 0f;
+		
 		private float _elongationSpeed = 0f;
 		private float _elongationProgress = 0f;
+		private float _growthTarget = 1;
+		private float _legHeight = 0f;
 		private float _rotationDirection = 0f;
+		private float _rotationSpeed = 0f;
 
-		private float _growthTarget;
+		private CreatureController _creatureController;
+		private LineRenderer _lneRenderer;
+
+		private Vector2 _footOffset;
+		private Vector3[] _parts;
+		private Vector3[] _partOffsets;
+		
+		private TentacleLegData _data;
 		
 		public bool isInit { get; private set; }
 
@@ -34,16 +34,22 @@ namespace ProceduralTentacle.Creature.Tentacles
 		/// </summary>
 		public void Initialize(CreatureController creature, TentacleLegData data)
 		{
+			//Initialize to values of the component.
 			_lneRenderer = GetComponent<LineRenderer>();
 			_creatureController = creature;
 			_data = data;
 
 			_parts = new Vector3[data.partCount];
+			
+			//Used "lenght -2" because the leg has no offset before the top and after the last part.
 			_partOffsets = new Vector3[data.partCount - 2];
+			
+			//Initialize the parts offsets
 			InitializePartOffsets(ref _partOffsets);
 			
 			SetContactPoint();
 			
+			//The values are randomly selected for natural appearance.
 			_legHeight = _data.legHeight.GetRandomValue();
 			_rotationSpeed = _data.rotationSpeed.GetRandomValue();
 			_rotationDirection = _data.rotationDirection;

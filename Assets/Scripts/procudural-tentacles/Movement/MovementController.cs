@@ -6,6 +6,9 @@ namespace ProceduralTentacle.Movement
 	[Serializable]
 	public abstract class MovementController
 	{
-		public abstract void Move(Transform objectTransform, Vector3 direction, float speed, out Vector3 currentVelocity);
+		public Vector3 velocity { get; protected set; } = Vector3.zero;
+
+		public abstract void Move(Transform objectTransform, Vector3 direction, float speed,
+			out Vector3 currentVelocity);
 	}
 }
